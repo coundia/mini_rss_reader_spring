@@ -19,14 +19,9 @@
 
 #API
 
-- Verifier status Api 
-
 -[https://mini-rss-api.herokuapp.com/api/v1/rss/status](https://mini-rss-api.herokuapp.com/api/v1/rss/status)
 
-## charger le flux RSS (uniquement les nouveaux articles )  
-
+# charger l flux RSS depuis le site monde 
 -[https://mini-rss-api.herokuapp.com/api/v1/rss/refresh](https://mini-rss-api.herokuapp.com/api/v1/rss/refresh)
-
-## lister les articles 
 
 -[https://mini-rss-api.herokuapp.com/api/v1/rss/items](https://mini-rss-api.herokuapp.com/api/v1/rss/items)
