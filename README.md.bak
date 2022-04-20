@@ -18,7 +18,7 @@
 -[https://mini-rss-api.herokuapp.com/api/v1/rss/items](https://mini-rss-api.herokuapp.com/api/v1/rss/items)
 
 
-# Lancer le projet en local 
+# Lancer le projet local 
 
 - git clone https://github.com/coundia/mini_rss_reader_spring
 
