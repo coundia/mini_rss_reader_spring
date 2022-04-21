@@ -26,6 +26,8 @@
 - Telecharger le fichier :  https://github.com/coundia/mini_rss_reader_spring/releases/download/v1.1/mini_rss_reader_spring-v1.1.jar
 - Configurer le JRE de JAVA
 - java -jar mini_rss_reader_spring-v1.1.jar
+
+
 2- Option 2 : passer maven
 - Backend (spring)
 - mvn spring-boot:run
