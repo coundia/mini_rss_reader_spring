@@ -18,11 +18,34 @@
 -[https://mini-rss-api.herokuapp.com/api/v1/rss/items](https://mini-rss-api.herokuapp.com/api/v1/rss/items)
 
 
-# Lancer le projet en local 
 
-- git clone https://github.com/coundia/mini_rss_reader_spring
-
-- Installer Maven 
-
+## Lancer le projet
+- Backend (spring)
 - mvn spring-boot:run
 
+
+- front end (angular)
+- npm  install
+- ng serve
+
+## Lien de test
+- front end
+- https://mini-rss-reader.herokuapp.com/
+
+- Backend
+- https://mini-rss-api.herokuapp.com/api/v1/rss/items
+- https://mini-rss-api.herokuapp.com/api/v1/rss/refresh
+- https://mini-rss-api.herokuapp.com/api/v1/rss/status
+
+
+## MODEL C4
+
+#Context
+
+![Conext](context.png)
+
+## Architecture
+![Architecture](deployment.png)
+
+
+by coundia
