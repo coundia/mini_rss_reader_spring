@@ -76,7 +76,7 @@ Representé notre MCD (Model conceptuel de données) .
 
 ## Architecture
 
-![Architecture](deployment.png)
+![architecture.png](architecture.png)
 
 
 ### Backend  ([SPRING](https://spring.io/why-spring))
