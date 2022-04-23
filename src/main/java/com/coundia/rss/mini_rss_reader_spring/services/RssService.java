@@ -1,6 +1,8 @@
 package com.coundia.rss.mini_rss_reader_spring.services;
 
+import com.coundia.rss.mini_rss_reader_spring.entity.Channel;
 import com.coundia.rss.mini_rss_reader_spring.entity.Item;
+import com.coundia.rss.mini_rss_reader_spring.repositories.ChannelRepository;
 import com.coundia.rss.mini_rss_reader_spring.repositories.ItemRepository;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
@@ -24,6 +26,7 @@ import java.util.Optional;
 @Log4j2
 public class RssService {
     private ItemRepository itemRepository;
+    private ChannelRepository channelRepository;
 
     public RssService(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
@@ -90,5 +93,8 @@ public class RssService {
 //verifier si l'article existe dans la base
     public Optional<Item> verifierExistance(String imgURL){
         return itemRepository.findDistinctByImageUrl(imgURL);
+    }
+
+    public void saveChannel(Channel channel) {
     }
 }
