@@ -37,7 +37,6 @@ public class Item implements Serializable {
     private Date pubDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "channel_id", nullable = false)
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JoinColumn(name = "channel_id", nullable = true)
     private Channel channel;
 }

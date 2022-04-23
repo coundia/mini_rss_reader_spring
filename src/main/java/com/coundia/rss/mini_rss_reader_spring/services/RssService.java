@@ -95,6 +95,7 @@ public class RssService {
         return itemRepository.findDistinctByImageUrl(imgURL);
     }
 
-    public void saveChannel(Channel channel) {
+    public Channel saveChannel(Channel channel) {
+        return channelRepository.save(channel);
     }
 }

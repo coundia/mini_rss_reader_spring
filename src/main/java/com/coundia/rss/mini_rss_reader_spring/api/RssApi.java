@@ -6,6 +6,7 @@ import com.coundia.rss.mini_rss_reader_spring.services.RssService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -39,8 +40,11 @@ public class RssApi {
     @PostMapping("refreshByChannel")
     public  List<Item> refreshByUri(@RequestBody Channel channel) {
 
-        rssService.saveChannel(channel);
+        if(!rssService.saveChannel(channel).getLink().isEmpty())
         return  rssService.getFluxLeMonde(channel.getLink());
+        else
+        return new ArrayList<>();
+
     }
     //
 
