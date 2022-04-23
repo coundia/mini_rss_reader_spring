@@ -1,5 +1,6 @@
 package com.coundia.rss.mini_rss_reader_spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +23,6 @@ import java.util.Date;
 public class Item implements Serializable {
     @Id
     @Column
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(columnDefinition="TEXT")
@@ -35,4 +35,9 @@ public class Item implements Serializable {
     private String imageUrl;
     @Column
     private Date pubDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "channel_id", nullable = false)
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Channel channel;
 }

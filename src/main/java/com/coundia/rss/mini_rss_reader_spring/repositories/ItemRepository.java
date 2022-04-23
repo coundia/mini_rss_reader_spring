@@ -2,6 +2,7 @@ package com.coundia.rss.mini_rss_reader_spring.repositories;
 
 import com.coundia.rss.mini_rss_reader_spring.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.Optional;
@@ -15,5 +16,6 @@ import java.util.Optional;
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
    Optional<Item> findDistinctByImageUrl(String imgURL);
+
 }
 

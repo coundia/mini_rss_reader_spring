@@ -1,11 +1,10 @@
 package com.coundia.rss.mini_rss_reader_spring.api;
 
+import com.coundia.rss.mini_rss_reader_spring.entity.Channel;
 import com.coundia.rss.mini_rss_reader_spring.entity.Item;
 import com.coundia.rss.mini_rss_reader_spring.services.RssService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +35,14 @@ public class RssApi {
     public  List<Item> refreshFlux() {
         return  rssService.getFluxLeMonde(uri);
     }
+    //charger
+    @PostMapping("refreshByChannel")
+    public  List<Item> refreshByUri(@RequestBody Channel channel) {
+
+        rssService.saveChannel(channel);
+        return  rssService.getFluxLeMonde(channel.getLink());
+    }
+    //
 
 
 

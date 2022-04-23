@@ -1,9 +1,12 @@
 package com.coundia.rss.mini_rss_reader_spring;
 
+import com.coundia.rss.mini_rss_reader_spring.entity.Channel;
 import com.coundia.rss.mini_rss_reader_spring.entity.Item;
+import com.coundia.rss.mini_rss_reader_spring.repositories.ChannelRepository;
 import com.coundia.rss.mini_rss_reader_spring.repositories.ItemRepository;
 import com.coundia.rss.mini_rss_reader_spring.services.RssService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.digester.ArrayStack;
 import org.aspectj.lang.annotation.After;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +15,16 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.event.annotation.AfterTestMethod;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @SpringBootTest
 @Slf4j
 @ActiveProfiles(profiles = "dev")
 class MiniRssReaderSpringApplicationTests {
     //variables pour les tests
-    RestTemplate restTemplate = new RestTemplate();
-
-    String uri = "http://localhost:8080/rss/api/v1";
 
     @Autowired
     private ItemRepository itemRepository;
