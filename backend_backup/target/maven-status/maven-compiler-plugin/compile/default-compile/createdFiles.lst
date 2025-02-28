@@ -1,0 +1,13 @@
+com/coundia/rss/mini_rss_reader_spring/MiniRssReaderSpringApplication.class
+com/coundia/rss/mini_rss_reader_spring/services/RssService.class
+com/coundia/rss/mini_rss_reader_spring/config/CustomRestMvcConfiguration$1.class
+com/coundia/rss/mini_rss_reader_spring/core/MyUtils.class
+com/coundia/rss/mini_rss_reader_spring/entity/Item$ItemBuilder.class
+com/coundia/rss/mini_rss_reader_spring/config/CustomRestMvcConfiguration.class
+com/coundia/rss/mini_rss_reader_spring/config/ConfigWebFilter.class
+com/coundia/rss/mini_rss_reader_spring/entity/Channel$ChannelBuilder.class
+com/coundia/rss/mini_rss_reader_spring/api/RssApi.class
+com/coundia/rss/mini_rss_reader_spring/repositories/ChannelRepository.class
+com/coundia/rss/mini_rss_reader_spring/repositories/ItemRepository.class
+com/coundia/rss/mini_rss_reader_spring/entity/Item.class
+com/coundia/rss/mini_rss_reader_spring/entity/Channel.class

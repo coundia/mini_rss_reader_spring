@@ -1,0 +1,10 @@
+########## log config ##############################
+#spring.profiles.active=dev
+spring.profiles.active=prod
+debug=false
+#logging.level.org.hibernate.SQL=DEBUG
+#logging.level.org.hibernate.type=TRACE
+########## CONSTANTES  ########################################
+URI_RSS_MONDE=https://www.lemonde.fr/rss/en_continu.xml
+############################################################
+
