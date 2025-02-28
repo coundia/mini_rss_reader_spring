@@ -1,7 +1,7 @@
 # Full-Stack Monorepo: Angular & Spring Boot
 
 This project is a **full-stack monorepo** using **Angular** for the frontend and **Spring Boot** for the backend.
-
+![container.png](doc/container.png)
 ## Project Structure
 ```
 /my-monorepo
@@ -48,7 +48,10 @@ task start:frontend
 ```sh
 task start
 ```
+http://localhost:4200/
 
+#REFRESH AND INJOY
+![home.png](doc/home.png)
 ---
 
 ## Building the Project
