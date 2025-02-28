@@ -1,166 +1,191 @@
+# MINI RSS FEED PROJECT
 
+## Project Context
 
-# MINI PROJET FLUX RSS
+**Mini RSS Feed Project**
 
-# Conext du projet
+PROGRAM: SOFTWARE ENGINEERING - EDACY - DIGITAL AFRICA
 
-MINI PROJET FLUX RSS
+### Objective
 
-PROGRAMME SOFTWARE ENGINEERING EDACY - DIGITAL AFRICA
+The goal of this project is to develop an RSS feed reader.
 
-## Objectif
+### Functional Requirements
 
-L’objectif de ce projet est de développer un lecteur de flux RSS
+- Retrieve the RSS feed from *Le Monde* [https://www.lemonde.fr/rss/en_continu.xml](https://www.lemonde.fr/rss/en_continu.xml)
+- Display the feed in a listing format with images and excerpts
+- Implement pagination
+- Allow users to edit the title
+- Allow users to edit the excerpt
 
-## Besoins fonctionnels
+### Constraints
 
-- Récupérer le flux du 'le monde' [https://www.lemonde.fr/rss/en_continu.xml](https://www.lemonde.fr/rss/en_continu.xml)
-- l'afficher sous un format listing avec image et extrait
-- Prévoir la pagination
-- Pouvoir modifier le titre
-- Pouvoir modifier l'extrait
+- **Frontend language**: Angular (mandatory)
+- **Backend language**: Any (developer's choice)
+- **Deadline**: 2 days, to be submitted by Thursday, April 21 at 12:00 PM GMT
 
-## Contraintes
+### Deliverables
 
-- Langage front imposé : Angular
-- Langage back : au choix
-- Délai : 2 jours, à rendre au plus tard le jeudi 21 avril à 12h00 GMT
+- GitHub repository of the project
+- A **README** explaining the technologies used and how to run the application
+- Bonus for those who can provide a link where the application can be tested (e.g., Heroku)
 
-## Livrables
+---
 
-- Repo Github du projet
-- Un README qui explique les technologies utilisées et le processus de lancement de l’application
-- Un bonus pour ceux qui pourront partager un lien ou on peut tester (par exemple sur Heroku)
+## Technologies Used
 
-## Technologies Utilisées pour la realisation du miniprojet
+### **Modeling: [C4 Model](https://c4model.com/)**
 
-## Modélisation : [ModelC4](https://c4model.com/)
+The **C4 model** is a lightweight graphical notation technique for modeling software architecture. It is based on the structural decomposition of a system into containers and components.
 
-La modélisation C4 (de l'anglais « C4 model ») est une technique de notation graphique allégée pour la modélisation
-d'architectures logicielles1,2. Elle est basée sur la décomposition structurelle d'un système en conteneurs et
-composants. La décomposition plus détaillée de ces éléments architecturaux peut alors s'appuyer sur des techniques de
-modélisation existantes telles que le langage de modélisation unifié (UML) ou les diagrammes entité-associations.
+### **C4 Model Terminologies**
 
-  [Source definition](https://fr.wikipedia.org/wiki/Mod%C3%A9lisation_C4)
+#### **Person**
+Represents different users of the system.
 
+#### **System**
+The highest level of abstraction in the C4 model, describing the functional requirements of users.
 
-# Terminologies du modelC4
+#### **Container**
+Represents something that hosts code or data and must run for the system to function.
 
-![C4Model](https://c4model.com/img/abstractions.png)
+#### **Component**
+A grouping of related functionalities encapsulated behind a well-defined interface.
 
-### `Person`
+#### **Code**
+Represents the **Conceptual Data Model (CDM)**.
 
-Person : les 'Person' sont les différents utilisateurs de notre système .
+### **Model Representation**
 
-### `System`
+#### **Context Diagram**
 
-Un système est le plus haut niveau d'abstraction du modelC4 et décrit les Besoins fonctionels des utilisateurs (Person)
+![Context](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/context.png)
 
-### `Container`
-
-Un `Container` représenté quelque chose qui héberge du code ou des données. Un conteneur est quelque chose qui doit être
-exécuté pour que le système fonctionne. En termes réels, un conteneur ressemble
-
-### `Composant`
-
-Un "composant" est simplement un regroupement de fonctionnalités connexes encapsulées derrière une interface bien
-définie.
-
-### `Code`
-
-Representé notre MCD (Model conceptuel de données) .
-
-### Model
-
-# Context
-
-![Conext](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/context.png)
-
-## Container (Architecture)
+#### **Container (Architecture Diagram)**
 
 ![Architecture](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/container.png)
 
+---
 
+## Backend ([SPRING](https://spring.io/why-spring))
 
-### Backend  ([SPRING](https://spring.io/why-spring))
+Spring is an open-source Java framework offering:
+- Lightweight architecture
+- Fast development
+- Strong community support
+- Comprehensive tools
 
-Spring est un framework Java  open source . 
-- Leger 
-- Development rapide 
-- Bonne communauté
-- Complet (Beaucoup d'outils)
-- 
-# Lancer le backend-end 
+### **Running the Backend**
 
-1- Option 1 : passer par la release
+#### **Option 1: Using the Release Binary**
 
-- télécharger le binaire :  `wget https://github.com/coundia/mini_rss_reader_spring/releases/download/v1.1/mini_rss_reader_spring-v1.1.jar`
-- Configurer le JRE de JAVA
-- `java -jar mini_rss_reader_spring-v1.1.jar`
+1. Download the binary:
+   ```bash
+   wget https://github.com/coundia/mini_rss_reader_spring/releases/download/v1.1/mini_rss_reader_spring-v1.1.jar
+   ```
+2. Configure the Java Runtime Environment (JRE)
+3. Run the application:
+   ```bash
+   java -jar mini_rss_reader_spring-v1.1.jar
+   ```
 
-2- Option 2 : passer maven
-- cloner le projet : `git clone https://github.com/coundia/mini_rss_reader_spring`
-- `mvn spring-boot:run`
+#### **Option 2: Using Maven**
 
-- Api Backend
-  - gerer les articles (GET,PATCH,POST,POST) : Lister , modifier etc 
+1. Clone the project:
+   ```bash
+   git clone https://github.com/coundia/mini_rss_reader_spring
+   ```
+2. Run the application:
+   ```bash
+   mvn spring-boot:run
+   ```
+
+### **Backend API Endpoints**
+
+- **Manage articles (GET, PATCH, POST, DELETE):** List, edit, etc.
   - [https://mini-rss-api.herokuapp.com/api/v1/rss/items](https://mini-rss-api.herokuapp.com/api/v1/rss/items)
-  - Recuperer les articles depuis le monde et les mettre dans notre base de donnees
+- **Fetch articles from *Le Monde* and store in the database**
   - [https://mini-rss-api.herokuapp.com/api/v1/rss/refresh](https://mini-rss-api.herokuapp.com/api/v1/rss/refresh)
-  - Verifier status du serveur (UP)
+- **Check server status**
   - [https://mini-rss-api.herokuapp.com/api/v1/rss/status](https://mini-rss-api.herokuapp.com/api/v1/rss/status)
 
-### front end (angular)
+---
 
-1- Option 1 : passer par la release
+## Frontend (Angular)
 
-- télécharger le dist : `wget https://github.com/coundia/mini-rss-reader/releases/download/v1.1/distV1.2.zip`
-- décompresser le zip : `unzip distV1.2.zip`
-- SI vous n'avez de serveur Apache ou NGINX
-- `npm install --global http-server`
-- `cd distV1`
-- `http-server -o`
+### **Running the Frontend**
 
-2- Option 2 : passer npm 
+#### **Option 1: Using the Release Binary**
 
-- cloner le projet : `git clone https://github.com/coundia/mini-rss-reader`
-- `npm install`
-- `ng serve`
+1. Download the distribution:
+   ```bash
+   wget https://github.com/coundia/mini-rss-reader/releases/download/v1.1/distV1.2.zip
+   ```
+2. Extract the zip file:
+   ```bash
+   unzip distV1.2.zip
+   ```
+3. If you do not have an Apache or Nginx server, install a simple HTTP server:
+   ```bash
+   npm install --global http-server
+   ```
+4. Run the application:
+   ```bash
+   cd distV1
+   http-server -o
+   ```
 
-## Lien de test
+#### **Option 2: Using npm**
 
-- Front-end
-- [https://mini-rss-reader.herokuapp.com/](https://mini-rss-reader.herokuapp.com/)
+1. Clone the project:
+   ```bash
+   git clone https://github.com/coundia/mini-rss-reader
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the application:
+   ```bash
+   ng serve
+   ```
 
+### **Test Link**
 
-# Guide utilisateurs
+- **Frontend:**
+  - [https://mini-rss-reader.herokuapp.com/](https://mini-rss-reader.herokuapp.com/)
 
-- Boutton pour recuperer les derniers articles depuis le monde.fr
+---
 
-![Boutton pour recuperer les derniers articles depuis le monde.fr](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/recuperer.png)
+## User Guide
 
-- Listes articles 
+### **Fetch Latest Articles from *Le Monde***
 
-![Listes articles](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/liste.png)
+![Fetch Latest Articles](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/recuperer.png)
 
-- Modifier titre ou Description
+### **Article Listing**
 
-![Modifier titre ou Description](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/edit.png)
+![Article Listing](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/liste.png)
 
-- Résultat apres réactualisation de la page
+### **Edit Title or Description**
 
-![resultat apres reactualisation de la page](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/resultat.png)
+![Edit Title or Description](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/edit.png)
 
-- Pagination
+### **Result After Refreshing the Page**
+
+![Result After Refresh](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/resultat.png)
+
+### **Pagination**
 
 ![Pagination](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/img.png)
 
-- PWA : Pour desktop et Mobile 
+### **Progressive Web App (PWA) for Desktop and Mobile**
 
-![!PWA](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/img_1.png)
- 
+![PWA](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/img_1.png)
 
+---
 
-# Lien de la documentation complète 
+## Complete Documentation
 
-https://raw.githubusercontent.com/coundia/mini-rss-reader/main/README.md
+[Full README](https://raw.githubusercontent.com/coundia/mini-rss-reader/main/README.md)
+
