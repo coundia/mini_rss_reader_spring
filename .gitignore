@@ -1,34 +1,41 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# === BACKEND (Spring Boot) ===
+/backend/target/
+/backend/.mvn/
+/backend/.idea/
+/backend/*.iml
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/mvnw
+/backend/mvnw.cmd
+/backend/.cache/
+*.log
+*.tmp
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Ignore fichiers sensibles
+/backend/src/main/resources/application.properties
+/backend/src/main/resources/application.yml
+/backend/src/main/resources/application-dev.properties
+/backend/src/main/resources/application-prod.properties
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# === FRONTEND (Angular) ===
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.angular/
+/frontend/.idea/
+/frontend/.vscode/
+/frontend/.cache/
+*.log
+*.tmp
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# === SYSTEM FILES ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.sublime-workspace
 
-### VS Code ###
-.vscode/
-doc/dev/
+# === ENV FILES (Secrets) ===
+.env
+.env.local
+.env.*.local

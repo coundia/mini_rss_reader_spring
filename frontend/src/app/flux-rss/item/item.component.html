@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Modification de l'article </h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Titre</mat-label>
+    <textarea [(ngModel)]="data.title" matInput></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Extrait</mat-label>
+    <textarea [(ngModel)]="data.description" matInput></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button (click)="onNoClick()" mat-button>Retour</button>
+  <button (click)="updateItem(data)" [mat-dialog-close]="data.title" cdkFocusInitial mat-button>Soumettre</button>
+</div>

@@ -1,0 +1,23 @@
+<div class="app-container">
+  <mat-toolbar color="accent">
+    <div class="flex-stretch"></div>
+    <mat-icon>{{ isDark ? "dark_mode" : "light_mode" }}</mat-icon>
+    <mat-slide-toggle [formControl]="changerThemeFromCtrl" class="mr-8">
+    </mat-slide-toggle>
+    <span class="center">Lecteur flux RSS</span>
+  </mat-toolbar>
+
+  <app-header></app-header>
+  <app-item-list></app-item-list>
+
+  <footer class="footer">
+    <p>
+      Powered by 
+      <strong>
+        <a href="http://coundia.github.io" rel="noopener noreferrer" target="_blank">Papa COUNDIA</a>
+      </strong>
+      |
+      <a href="https://www.edacy.com/" rel="noopener noreferrer" target="_blank">EDACY</a> © .
+    </p>
+  </footer>
+</div>

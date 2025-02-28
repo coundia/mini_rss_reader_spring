@@ -1,0 +1,61 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: "Initialize the project (install dependencies)"
+    cmds:
+      - cd backend && ./mvnw clean install
+      - cd frontend && npm install --legacy-peer-deps
+    silent: false
+
+  start:backend:
+    desc: "Start the Spring Boot backend"
+    cmds:
+      - cd backend && ./mvnw spring-boot:run
+    silent: false
+
+  start:frontend:
+    desc: "Start the Angular frontend"
+    cmds:
+      - export NODE_OPTIONS=--openssl-legacy-provider
+      - cd frontend && ng serve
+    silent: false
+
+  start:
+    desc: "Start both backend and frontend"
+    cmds:
+      - export NODE_OPTIONS=--openssl-legacy-provider
+      - nohup task start:backend > backend.log 2>&1 &
+      - sleep 3
+      - task start:frontend
+    silent: false
+
+
+  build:frontend:
+    desc: "Build Angular for production"
+    cmds:
+      - cd frontend && ng build --configuration=production
+    silent: false
+
+  build:backend:
+    desc: "Build Spring Boot application"
+    cmds:
+      - cd backend && ./mvnw clean package
+    silent: false
+
+  deploy:
+    desc: "Build and deploy full application"
+    cmds:
+      - task: build:frontend
+      - task: build:backend
+      - cp -r frontend/dist/* backend/src/main/resources/static/
+      - echo "Deployment ready!"
+    silent: false
+
+  clean:
+    desc: "Clean all build files"
+    cmds:
+      - cd backend && ./mvnw clean
+      - cd frontend && rm -rf dist node_modules
+      - rm -rf ~/.m2/repository/org/springframework/boot
+    silent: false
