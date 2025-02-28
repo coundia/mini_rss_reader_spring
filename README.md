@@ -110,5 +110,5 @@ export NODE_OPTIONS=--openssl-legacy-provider
 ---
 
 ## License
-This project is licensed under the MIT License.
+MINI PROJET FLUX RSS PROGRAMME SOFTWARE ENGINEERING EDACY - DIGITAL AFRICA - flux rss - le monde
 
