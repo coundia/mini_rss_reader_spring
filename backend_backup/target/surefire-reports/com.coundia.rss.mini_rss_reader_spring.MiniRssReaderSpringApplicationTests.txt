@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.coundia.rss.mini_rss_reader_spring.MiniRssReaderSpringApplicationTests
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.518 s - in com.coundia.rss.mini_rss_reader_spring.MiniRssReaderSpringApplicationTests
