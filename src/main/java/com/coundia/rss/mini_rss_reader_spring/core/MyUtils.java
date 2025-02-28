@@ -9,7 +9,6 @@ import lombok.extern.log4j.Log4j2;
 /**
  * @author Papa Coundia
  * @created 14/04/2022 / 22:59
- * @project batch-traitement-upayb2b
  */
 @Log4j2
 public class MyUtils {

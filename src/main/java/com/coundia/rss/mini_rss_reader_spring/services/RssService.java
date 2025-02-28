@@ -51,26 +51,26 @@ public class RssService {
                 SyndFeed flux = new SyndFeedInput().build(reader);
                 log.info("***********************************");
                 log.info(flux.getTitle());
-                String imgURL="";
-                Optional <Item> itemExistant;
+                String imgURL = "";
+                Optional<Item> itemExistant;
                 log.info("***********************************");
                 for (SyndEntry entry : flux.getEntries()) {
                     //log.info(entry);
-                    imgURL="";
+                    imgURL = "";
                     //get image
                     List<Element> foreignMarkups = (List<Element>) entry.getForeignMarkup();
                     for (Element foreignMarkup : foreignMarkups) {
-                          imgURL = foreignMarkup.getAttribute("url").getValue();
+                        imgURL = foreignMarkup.getAttribute("url").getValue();
                     }
                     log.info(imgURL);
                     //get image end
                     //si il nexiste pas dans la base on le cree
-                     itemExistant=verifierExistance(imgURL);
-                    if(itemExistant.isPresent()){
+                    itemExistant = verifierExistance(imgURL);
+                    if (itemExistant.isPresent()) {
                         log.info("** EXISTE DEJA **");
                         list.add(itemExistant.get());
-                    }else{
-                        log.info("**  CREATION : {}  **",entry.getTitle());
+                    } else {
+                        log.info("**  CREATION : {}  **", entry.getTitle());
                         item = Item.builder()
                                 .title(entry.getTitle())
                                 .description(entry.getDescription().getValue())
@@ -90,8 +90,9 @@ public class RssService {
         }
         return list;
     }
-//verifier si l'article existe dans la base
-    public Optional<Item> verifierExistance(String imgURL){
+
+    //verifier si l'article existe dans la base
+    public Optional<Item> verifierExistance(String imgURL) {
         return itemRepository.findDistinctByImageUrl(imgURL);
     }
 
