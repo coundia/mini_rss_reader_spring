@@ -1,19 +1,21 @@
-# Full-Stack Angular & Spring Boot Project
-# mono repo
+# Full-Stack Monorepo: Angular & Spring Boot
 
-* README.md       
-* Taskfile.yml    
-* backend         => Api spring boot 2
-* frontend        => angular 13
-* backend.log     
-* doc             
+This project is a **full-stack monorepo** using **Angular** for the frontend and **Spring Boot** for the backend.
 
+## Project Structure
+```
+/my-monorepo
+  ├── /backend        # API Spring Boot 2
+  ├── /frontend       # Angular 13 Application
+  ├── /docs           # Documentation (optional)
+  ├── Taskfile.yml    # Task automation
+  ├── README.md       # Project documentation
+```
 
-This project is a full-stack application using **Angular** for the frontend and **Spring Boot** for the backend.
+---
 
 ## Prerequisites
-
-Before getting started, make sure you have installed:
+Make sure you have installed:
 - **Java 17+**
 - **Maven**
 - **Node.js 16+** and **npm**
@@ -23,11 +25,10 @@ Before getting started, make sure you have installed:
 ---
 
 ## Project Setup
-
 ```sh
 task setup
 ```
-This command installs the backend and frontend dependencies.
+This command installs dependencies for both backend and frontend.
 
 ---
 
@@ -43,7 +44,7 @@ task start:backend
 task start:frontend
 ```
 
-### Start Backend and Frontend Together:
+### Start Both Backend and Frontend:
 ```sh
 task start
 ```
@@ -52,12 +53,12 @@ task start
 
 ## Building the Project
 
-### Build the Frontend:
+### Build Frontend:
 ```sh
 task build:frontend
 ```
 
-### Build the Backend:
+### Build Backend:
 ```sh
 task build:backend
 ```
@@ -66,12 +67,11 @@ task build:backend
 ```sh
 task deploy
 ```
-The frontend build will be copied into the backend to be served statically.
+The frontend build will be copied into the backend to be served as static files.
 
 ---
 
 ## Cleaning the Project
-
 ```sh
 task clean
 ```
@@ -80,9 +80,7 @@ This command removes build files and cleans the Maven repository.
 ---
 
 ## Deployment
-
-After building, the frontend is copied into `backend/src/main/resources/static/`, allowing Spring Boot to serve the Angular application.
-
+After building, the frontend is copied to `backend/src/main/resources/static/`, allowing Spring Boot to serve the Angular application.
 ```sh
 task deploy
 ```
@@ -91,15 +89,15 @@ task deploy
 
 ## Common Issues
 
-### npm Dependency Errors
-If you encounter dependency errors with npm, try:
+### NPM Dependency Errors
+If you face dependency errors with npm, try:
 ```sh
 rm -rf node_modules package-lock.json
 npm install --legacy-peer-deps
 ```
 
-### OpenSSL Issue
-If using a recent version of Node.js, set this environment variable:
+### OpenSSL Issue with Node.js
+If using a recent Node.js version, set this environment variable:
 ```sh
 export NODE_OPTIONS=--openssl-legacy-provider
 ```
